@@ -1,0 +1,47 @@
+body {
+  background-color: #00b7ff;
+  background-image: url("../img/simple-shiny.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.glass {
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glass a {
+  text-decoration: none;
+}
+
+.container-center {
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-title {
+  color: black;
+  font-size: 2em;
+}
+
+.content-thumbnail {
+  display: flex;
+  justify-content: center;
+}
+
+.content-thumbnail__img {
+  max-width: 50%;
+}
+
+@media (min-width: 360px) { 
+  body {
+    max-width: 360px;
+  }
+}
