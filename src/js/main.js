@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:41062/www/utch-api-1/servicios.php?accion=';
+const API_URL = 'http://localhost:41062/www/utch-api-1/src/index.php?action=';
 
 const form = document.getElementById('form');
 const divContainer = document.getElementById('container');
@@ -19,9 +19,10 @@ const postDataService = (data, method, module) => {
     body: JSON.stringify(data),
   })
     .then((res) => {
-      if (res) feedbackAlert(res.msg, 'success');
+      if (res.error) throw Error(res.msg);
+      feedbackAlert(res.msg, 'success');
     })
-    .catch((err) => feedbackAlert(err.msg, 'danger'));
+    .catch((err) => feedbackAlert(err, 'danger'));
 };
 
 const formSendData = (event) => {
@@ -42,7 +43,8 @@ form.addEventListener('submit', (event) => {
   })
     .then((response) => response.json())
     .then((res) => {
-      if (res) feedbackAlert(res.msg, 'success');
+      if (res.error) throw Error(res.msg);
+      feedbackAlert(res.msg, 'success');
     })
-    .catch((err) => feedbackAlert(err.msg, 'danger'));
+    .catch((err) => feedbackAlert(err, 'danger'));
 });

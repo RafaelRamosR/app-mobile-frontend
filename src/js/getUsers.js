@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:41062/www/utch-api-1/servicios.php?accion=';
+const API_URL = 'http://localhost:41062/www/utch-api-1/src/index.php?action=';
 
 const table = document.getElementById('tbody');
 const fragment = document.createDocumentFragment();
@@ -42,6 +42,6 @@ table.addEventListener('click', e => {
   })
     .then((response) => response.json())
     .then((res) => {
-      if (res) table.removeChild(e.target.parentElement.parentElement);
+      if (!res.error) table.removeChild(e.target.parentElement.parentElement);
     });
 });
