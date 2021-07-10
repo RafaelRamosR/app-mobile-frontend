@@ -3,6 +3,7 @@ body {
   background-image: url("../img/simple-shiny.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  max-width: 360px;
   min-height: 100vh;
 }
 
@@ -40,8 +41,30 @@ body {
   max-width: 50%;
 }
 
-@media (min-width: 360px) { 
-  body {
-    max-width: 360px;
+@media (min-width: 1080px) { 
+  .avatar-img {
+    opacity: .5;
+    transition-duration: .3s;
   }
+
+  .card-user:hover .avatar-img {
+    opacity: 1;
+    transition-duration: .3s;
+  }
+}
+
+.card-user {
+  width: 340px;
+  border: none;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.subtitle {
+  font-size: 12px;
 }
